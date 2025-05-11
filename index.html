@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iLens Photography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+
+    header.hero {
+      background: url('https://iili.io/3v3inqv.jpg') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      position: relative;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    .nav {
+      position: absolute;
+      top: 20px; left: 50px; right: 50px;
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 2;
+    }
+
+    .logo {
+      font-weight: 700; font-size: 1.3em; color: white;
+    }
+
+    .logo span { color: gold; }
+
+    .nav ul {
+      list-style: none; display: flex; gap: 20px;
+    }
+
+    .nav ul li a {
+      color: white; text-decoration: none; font-size: 0.9em;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+    }
+
+    .content h1 {
+      font-size: 3em; font-weight: 700;
+    }
+
+    .content h1 span { color: gold; }
+
+    .content p {
+      margin-top: 15px; font-size: 1.1em; color: #e0e0e0;
+    }
+
+    .cta-button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      background-color: #e0b528;
+      color: black;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-button i { margin-right: 10px; }
+
+    section {
+      padding: 60px 30px;
+    }
+
+    .about {
+      background: #111;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .about .text {
+      flex: 1 1 60%;
+      padding-right: 30px;
+    }
+
+    .about .text h2 {
+      border-bottom: 4px solid gold;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .about .text p { margin-top: 20px; line-height: 1.6em; }
+
+    .about .image {
+      flex: 1 1 35%;
+    }
+
+    .about .image img {
+      max-width: 100%;
+    }
+
+    .portfolio {
+      background: #000;
+      color: white;
+      text-align: center;
+    }
+
+    .portfolio h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .portfolio-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .portfolio-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .portfolio-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .price-section {
+      background: linear-gradient(#111, #000);
+      color: white;
+      text-align: center;
+    }
+
+    .price-section h2 {
+      margin-bottom: 30px;
+    }
+
+    .price-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: gold;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      margin: 10px 0;
+    }
+
+    .card .price {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+
+    .card a {
+      background: gold;
+      color: black;
+      padding: 10px 15px;
+      display: inline-block;
+      margin-top: 10px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .about {
+        flex-direction: column;
+      }
+      .about .text, .about .image {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay"></div>
+    <nav class="nav">
+      <div class="logo"><span>i</span>Lens</div>
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#portfolio">Galeri</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <h1><span>i</span>Lens Photography</h1>
+      <p>Mengabadikan Momen dengan Kesan yang Tak Terlupakan</p>
+      <a class="cta-button" href="https://wa.me/6281234567890" target="_blank">
+        <i class="fab fa-whatsapp"></i>ORDER VIA WHATSAPP
+      </a>
+    </div>
+  </header>
+
+  <section class="about" id="tentang">
+    <div class="text">
+      <h2>Tentang Kami</h2>
+      <p>
+        iLens Photography berdiri sejak tahun 2022 sebagai studio fotografi dan videografi yang berdedikasi untuk mengabadikan momen-momen berharga dalam hidup Anda dengan sentuhan artistik dan profesional.
+        <br><br>
+        Sejak awal berdiri hingga sekarang, kami bergerak di bidang foto dan video dengan spesialisasi yang berbeda. Untuk fotografi, kami lebih condong pada dokumentasi acara keluarga seperti family gathering dan foto shot berbagai acara. Sementara untuk videografi, kami fokus pada video shot UKIN, video tari, dan dokumentasi acara penting lainnya.
+        <br><br>
+        Selain itu, iLens Photography juga menyediakan berbagai jasa pendukung seperti jasa editing foto dan video, jasa desain grafis, serta pembuatan website portofolio untuk memenuhi kebutuhan visual dan digital klien kami secara menyeluruh.
+      </p>
+    </div>
+    <div class="image">
+      <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="kamera">
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <h2>Portofolio Kami</h2>
+    <div class="portfolio-gallery">
+      <img src="https://iili.io/3kyFdrb.jpg">
+      <img src="https://iili.io/3kyF32j.jpg">
+      <img src="https://iili.io/3kyFFYx.jpg">
+      <img src="https://iili.io/3kyFKkQ.jpg">
+      <img src="https://iili.io/3kyFen9.jpg">
+      <img src="https://iili.io/3kyFv6u.jpg">
+      <img src="https://iili.io/3kyFS3b.jpg">
+      <img src="https://iili.io/3kyFLn1.jpg">
+      <img src="https://iili.io/3kyKSVt.jpg">
+      <img src="https://iili.io/3kyK4ls.jpg">
+      <img src="https://iili.io/3kyKQb2.jpg">
+      <img src="https://iili.io/3kyKbs9.jpg">
+      <img src="https://iili.io/3kyffWP.jpg">
+      <img src="https://iili.io/3kyfRzN.jpg">
+      <img src="https://iili.io/3kyf5XI.jpg">
+      <img src="https://iili.io/3kyfkdb.jpg">
+      <img src="https://iili.io/3kyfsrg.jpg">
+      <img src="https://iili.io/3kyqRvj.jpg">
+      <img src="https://iili.io/3kyqajV.jpg">
+      <img src="https://iili.io/3kyqkGt.jpg">
+      <img src="https://iili.io/3kyBAPt.jpg">
+      <img src="https://iili.io/3kyB7ln.jpg">
+      <img src="https://iili.io/3kyBcHG.jpg">
+      <img src="https://iili.io/3kyB0N4.jpg">
+      <img src="https://iili.io/3kyBQbR.jpg">
+    </div>
+  </section>
+  <style>
+    .service-pricelist-section {
+        background: linear-gradient(#111, #000);
+        color: white;
+        padding: 60px 30px;
+        text-align: center;
+    }
+
+    .service-pricelist-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .service-cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .service-card {
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: left;
+        transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .service-icon {
+        font-size: 2em;
+        color: gold;
+        margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .service-card p {
+        font-size: 0.95em;
+        color: #bbb;
+        line-height: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .service-price {
+        font-weight: bold;
+        font-size: 1.1em;
+        color: gold;
+    }
+</style>
+
+<section class="service-pricelist-section" id="layanan">
+    <h2>Layanan & Pricelist</h2>
+    <div class="service-cards-container">
+        <div class="service-card">
+            <i class="fa fa-video service-icon"></i>
+            <h3>Video Shot UKIN</h3>
+            <p>Dokumentasi video untuk acara UKIN dengan kualitas profesional.</p>
+            <p class="service-price">Rp200.000</p>
+        </div>
+        <div class="service-card">
+            <i class="fa fa-film service-icon"></i>
+            <h3>Video Shot UKIN + Editing</h3>
+            <p>Paket lengkap dokumentasi video UKIN dengan proses editing profesional.</p>
+            <p class="service-price">Rp700.000</p>
+        </div>
+        <div class="service-card">
+            <i class="fa fa-music service-icon"></i>
+            <h3>Video Shot Tari</h3>
+            <p>Dokumentasi video untuk pertunjukan tari dengan angle dan teknik khusus.</p>
+            <p class="service-price">Custom Price</p>
+        </div>
+        <div class="service-card">
+            <i class="fa fa-birthday-cake service-icon"></i>
+            <h3>Photoshot Acara Ulang Tahun/Khitanan</h3>
+            <p>Dokumentasi foto untuk acara spesial keluarga dengan hasil yang memuaskan.</p>
+            <p class="service-price">Rp350.000</p>
+        </div>
+        <div class="service-card">
+            <i class="fa fa-users service-icon"></i>
+            <h3>Photoshot Family Gathering</h3>
+            <p>Dokumentasi foto untuk acara kumpul keluarga dengan hasil yang natural dan berkesan.</p>
+            <p class="service-price">Rp500.000</p>
+        </div>
+        <div class="service-card">
+            <i class="fa fa-scissors service-icon"></i>
+            <h3>Jasa Editing Video UKIN (24 Jam)</h3>
+            <p>Layanan editing video UKIN dengan waktu pengerjaan cepat dalam 24 jam.</p>
+            <p class="service-price">Rp300.000</p>
+        </div>
+        <div class="service-card">
+            <i class="fa fa-desktop service-icon"></i>
+            <h3>Jasa Pembuatan Website Portofolio</h3>
+            <p>Pembuatan website portofolio profesional sesuai dengan kebutuhan Anda.</p>
+            <p class="service-price">Custom Price</p>
+        </div>
+        <div class="service-card">
+            <i class="fa fa-paint-brush service-icon"></i>
+            <h3>Jasa Desain Banner</h3>
+            <p>Layanan desain banner untuk berbagai keperluan dengan hasil yang menarik.</p>
+            <p class="service-price">Custom Price</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .contact-bg-section {
+        background: url('https://iili.io/3v3inqv.jpg') no-repeat center center/cover; /* Ganti dengan gambar Anda */
+        color: white;
+        padding: 100px 30px;
+        text-align: center;
+        position: relative;
+    }
+
+    .contact-bg-overlay {
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .contact-bg-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .contact-bg-content h2 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        color: gold;
+    }
+
+    .contact-bg-content p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .contact-bg-content a {
+        display: inline-block;
+        background-color: gold;
+        color: black;
+        padding: 15px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .contact-bg-content a:hover {
+        background-color: #e0b528;
+    }
+</style>
+
+<section class="contact-bg-section" id="kontak">
+    <div class="contact-bg-overlay"></div>
+    <div class="contact-bg-content">
+        <h2>Siap Mengabadikan Momen Anda?</h2>
+        <p>Hubungi kami sekarang untuk konsultasi gratis atau pemesanan layanan fotografi dan videografi profesional.</p>
+        <a href="https://wa.me/6281214314338" target="_blank">Hubungi via WhatsApp</a>
+    </div>
+</section>
+<style>
+    .footer-logo-desc {
+        background-color: #181818;
+        color: #bbb;
+        padding: 40px 0;
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    .footer-logo {
+        font-weight: 700;
+        font-size: 1.5em;
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .footer-logo span {
+        color: gold;
+    }
+
+    .footer-description {
+        max-width: 600px;
+        margin: 0 auto 20px;
+        line-height: 1.6em;
+    }
+
+    .footer-copyright {
+        padding-top: 20px;
+        border-top: 1px solid #333;
+    }
+</style>
+
+<footer class="footer-logo-desc">
+    <div class="footer-logo"><span>i</span>Lens Photography</div>
+    <div class="footer-description">
+        Mengabadikan momen-momen berharga Anda dengan kualitas terbaik dan sentuhan artistik. Percayakan dokumentasi acara Anda kepada profesional.
+    </div>
+    <div class="footer-copyright">
+        <p>© 2025 iLens Photography. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
